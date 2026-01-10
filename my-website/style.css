@@ -1,0 +1,187 @@
+/* style.css
+   Scholarly / archive look — compact, serif, narrow measure
+   (A close visual match to Documenta Catholica Omnia-style typography)
+*/
+
+/* --------- Basic reset & base typography --------- */
+* { box-sizing: border-box; }
+html,body {
+  margin: 0;
+  padding: 0;
+  background: #f6f1d3;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  line-height: 1.2;
+  font-size: 17px;              /* comfortable reading size */
+}
+
+/* --------- Central container (narrow measure) --------- */
+.container, main {
+  max-width: 680px;             /* controls line length; reduce to 600/520 if you want narrower */
+  margin: 2.4rem auto;
+  padding: 1.2rem 1.4rem 1.2rem 2.4rem;
+  background: #ffffff; 
+}
+
+/* For pages that don't use a wrapper, provide a safe fallback */
+body > :not(header):not(footer):not(nav) {
+  /* won't override explicit .container usage, but helps if you didn't wrap content */
+}
+
+/* --------- Headings (compact, book-like) --------- */
+h1 {
+  font-size: 1.6rem;            /* ~25-28px */
+  margin: 0 0 0.4rem 0;
+  font-weight: normal;
+}
+h2 {
+  font-size: 1.1rem;
+  margin: 1.0rem 0 0.35rem 0;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+}
+h3 {
+  font-size: 1rem;
+  margin: 0.85rem 0 0.35rem 0;
+  font-weight: bold;
+}
+
+/* --------- Paragraphs and text rhythm --------- */
+p {
+  margin: 0 0 1rem 0;
+  text-wrap: pretty;
+  orphans: 2;
+  widows: 2;
+}
+
+/* Slight first-line paragraph indent for scholarly feel (optional) */
+p + p { text-indent: 0; }      /* no general indent by default */
+/* If you want first-line indent across body, uncomment:
+p { text-indent: 1.1em; margin-top: 0.2em; }
+*/
+
+/* --------- Links (subtle, classic blue) --------- */
+a {
+  color: #0645ad;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(6,69,173,0.18);
+}
+a:hover, a:focus {
+  text-decoration: underline;
+  border-bottom-style: solid;
+}
+
+/* --------- Index / list style (archive look) --------- */
+ul.index {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+ul.index li {
+  margin: 0.4rem 0;
+  padding: 0;
+  line-height: 1.4;
+  font-size: 0.98rem;
+}
+
+/* numbered style if needed */
+ol.catalog {
+  margin: 0 0 1rem 1.2rem;
+}
+
+/* --------- Thumbnail styling (index linking to full image) --------- */
+.thumbnail {
+  display: inline-block;
+  text-align: center;
+  margin: 0.35rem 0;
+}
+.thumbnail img {
+  display: block;
+  max-width: 300px;             /* thumbnail size */
+  height: auto;
+  border: 1px solid #dcdcdc;
+  background: #fbfbfb;
+  padding: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  margin: 0 auto;
+}
+.thumbnail small {
+  display: block;
+  margin-top: 0.35rem;
+  color: #333;
+  font-size: 0.88rem;
+}
+
+/* If you want thumbnails to be in a vertical list, they will align naturally inside ul.index li */
+
+/* --------- Full image presentation page --------- */
+.full-image {
+  text-align: center;
+  margin: 1.2rem 0 2rem 0;
+}
+.full-image img {
+  max-width: 100%;
+  height: auto;
+  background: #fff;
+  border: none;
+}
+
+/* --------- Blockquote, citation styling (scholarly) --------- */
+blockquote {
+  margin: 1rem 0;
+  padding: 0.6rem 1rem;
+  border-left: 3px solid #efefef;
+  color: #333;
+  background: #fafafa;
+  font-style: italic;
+}
+
+/* --------- Tables (simple, readable) --------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+table th, table td {
+  border: 1px solid #e8e8e8;
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+}
+table th {
+  background: #fbfbfb;
+  font-weight: bold;
+}
+
+/* --------- Footer and small print --------- */
+footer {
+  margin-top: 2.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  color: #666;
+  font-size: 0.88rem;
+}
+
+/* --------- Utility: small monospace metadata --------- */
+.metadata {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0.25rem 0 0 0;
+}
+
+/* --------- Accessibility helpers --------- */
+img[alt=""], img[alt=""] + small { outline: 1px dashed #f3f3f3; }
+
+/* --------- Responsive tweaks --------- */
+@media (max-width: 760px) {
+  .container, main { max-width: 92%; padding: 0 0.8rem; }
+  html,body { font-size: 16px; }
+  .thumbnail img { max-width: 220px; }
+}
+@media (max-width: 420px) {
+  html,body { font-size: 15px; }
+  .thumbnail img { max-width: 180px; }
+}
