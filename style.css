@@ -222,3 +222,26 @@ main.textpage {
   padding: 4px;
   background: #fff;
 }
+.imagelist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.imagelist li { width: 220px; }
+.imagelist img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #ddd;
+  padding: 4px;
+  background: #fff;
+}
+.imagelist .caption {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 0.35rem;
+  text-align: center;
+}
