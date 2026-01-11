@@ -185,3 +185,21 @@ img[alt=""], img[alt=""] + small { outline: 1px dashed #f3f3f3; }
   html,body { font-size: 15px; }
   .thumbnail img { max-width: 180px; }
 }
+
+/* Base page wrapper */
+main {
+  margin: 2.4rem auto;
+  background: #ffffff;
+}
+
+/* Home page: wider */
+main.home {
+  max-width: 760px;
+  padding: 1.6rem 2.2rem;
+}
+
+/* Text pages: narrower, book-like */
+main.textpage {
+  max-width: 580px;
+  padding: 1.8rem 2.8rem;
+}
