@@ -203,3 +203,22 @@ main.textpage {
   max-width: 580px;
   padding: 1.8rem 2.8rem;
 }
+/* Image index page */
+.imagelist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.imagelist a {
+  display: block;
+}
+
+.imagelist img {
+  max-width: 200px;
+  height: auto;
+  border: 1px solid #ccc;
+  padding: 4px;
+  background: #fff;
+}
